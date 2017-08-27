@@ -125,47 +125,47 @@ const MyComponent = require(path.resolve('./src/components/fragment/MyComponent'
 ```
 * **Keys** for array: https://mithril.js.org/keys.html
 * **Vanilla CSS**
-  * **Avoid using the space operator** - The vast majority of CSS maintainability issues are due to CSS specificity issues. The space operator defines a descendant (e.g. .a .b) and at the same time, it increases the level of specificity for the CSS rules that apply to that selector, sometimes overriding styles unexpectedly.
-Instead, it's preferable to share a namespace prefix in all class names that belong to a logical group of elements:
-```css
-/* AVOID */
-.chat.container {/*...*/}
-.chat .item {/*...*/}
-.chat .avatar {/*...*/}
-.chat .text {/*...*/}
+  * **Avoid using the space operator** - The vast majority of CSS maintainability issues are due to CSS specificity issues. The space operator defines a descendant (e.g. .a .b) and at the same time, it increases the level of specificity for the CSS rules that apply to that selector, sometimes overriding styles unexpectedly. 
+  Instead, it's preferable to share a namespace prefix in all class names that belong to a logical group of elements:
+	```css
+	/* AVOID */
+	.chat.container {/*...*/}
+	.chat .item {/*...*/}
+	.chat .avatar {/*...*/}
+	.chat .text {/*...*/}
 
-/* PREFER */
-.chat-container {/*...*/}
-.chat-item {/*...*/}
-.chat-avatar {/*...*/}
-.chat-text {/*...*/}
-```
+	/* PREFER */
+	.chat-container {/*...*/}
+	.chat-item {/*...*/}
+	.chat-avatar {/*...*/}
+	.chat-text {/*...*/}
+	```
   * **Use only single-class selectors** - This convention goes hand-in-hand with the previous one: avoiding high specificity selectors such as #foo or div.bar help decrease the likelyhood of specificity conflicts.
-```css
-/* AVOID */
-#home {}
-input.highlighted {}
+	```css
+	/* AVOID */
+	#home {}
+	input.highlighted {}
 
-/* PREFER */
-.home {}
-.input-highlighted {}
-```
-  * **Develop naming conventions** - You can reduce naming collisions by defining keywords for certain types of UI elements. This is particularly effective when brand names are involved:
-```css
-/* AVOID */
-.twitter {} /* icon link in footer */
-.facebook {} /* icon link in footer */
-/* later... */
-.modal.twitter {} /* tweet modal */
-.modal.facebook {} /* share modal */
+	/* PREFER */
+	.home {}
+	.input-highlighted {}
+	```
+   * **Develop naming conventions** - You can reduce naming collisions by defining keywords for certain types of UI elements. This is particularly effective when brand names are involved:
+	```css
+	/* AVOID */
+	.twitter {} /* icon link in footer */
+	.facebook {} /* icon link in footer */
+	/* later... */
+	.modal.twitter {} /* tweet modal */
+	.modal.facebook {} /* share modal */
 
-/* PREFER */
-.link-twitter {}
-.link-facebook {}
-/* later... */
-.modal-twitter {}
-.modal-facebook {}
-```
+	/* PREFER */
+	.link-twitter {}
+	.link-facebook {}
+	/* later... */
+	.modal-twitter {}
+	.modal-facebook {}
+	```
     
 ##### **Javascript Style Guide** #####
 * https://github.com/airbnb/javascript
