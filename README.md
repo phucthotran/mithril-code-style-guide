@@ -1,4 +1,4 @@
-# Mithril Code Style Guide #
+# Mithril Project Guide #
 
 ## Command ##
 #### Install ####
