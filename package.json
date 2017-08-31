@@ -1,0 +1,48 @@
+{
+  "name": "mithril-project-guide",
+  "version": "1.0.0",
+  "description": "Mithril Project Guideline",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production ./node_modules/webpack/bin/webpack.js --display-error-details --progress --colors --config webpack.config.js",
+    "build.pilot": "cross-env NODE_ENV=pilot ./node_modules/webpack/bin/webpack.js --display-error-details --progress --colors --config webpack.config.js",
+    "build.dev": "cross-env NODE_ENV=development ./node_modules/webpack/bin/webpack.js --display-error-details --progress --colors --config webpack.config.js",
+    "build.local": "cross-env NODE_ENV=local ./node_modules/webpack/bin/webpack.js --display-error-details --progress --colors --config webpack.config.js",
+    "dev": "cross-env NODE_ENV=local ./node_modules/webpack/bin/webpack.js --display-error-details --progress --colors --watch --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phucthotran/mithril-project-guide.git"
+  },
+  "keywords": [
+    "mithril",
+    "guideline",
+    "code",
+    "style",
+    "guide"
+  ],
+  "author": "Tran Phuc Tho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phucthotran/mithril-project-guide/issues"
+  },
+  "homepage": "https://github.com/phucthotran/mithril-project-guide#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "css-loader": "^0.28.5",
+    "mithril": "^1.1.3",
+    "node-sass": "^4.5.3",
+    "path": "^0.12.7",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "svg-url-loader": "^2.1.1",
+    "webpack": "^3.5.5",
+    "webpack-bundle-analyzer": "^2.9.0"
+  }
+}
