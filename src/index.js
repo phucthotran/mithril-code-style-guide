@@ -9,7 +9,11 @@ class MPG {
       require.ensure([], (require) => {
         const CustomerForm = require('components/form/CustomerForm').default;
 
-        m.render(document.body, <CustomerForm />);
+        m.mount(document.body, {
+          view: () => {
+            return m(CustomerForm);
+          }
+        });
       });
     });
   }

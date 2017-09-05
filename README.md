@@ -69,7 +69,7 @@ Update `configs/config.js` before build
 
 ## **Code Style Guide** ##
 ##### **Mithril Rules & Note** #####
-* `vnode.state` for component's state
+* `this.state` for component's state (Object)
 * `vnode.attrs` get component's attributes
 * `vnode.children` get component's children (*Array|String|Number|Boolean*)
 * `vnode.text` (*String|Number|Boolean*) This is used instead of children if a vnode contains a text node as its only child (recommend)
@@ -77,8 +77,8 @@ Update `configs/config.js` before build
 ```javascript
 class MyComponent {
     constructor(vnode) {
-        vnode.state.myState = 'myState';
-        vnode.state.myState2 = vnode.attrs.myAttr;
+        this.state.myState = 'myState';
+        this.state.myState2 = vnode.attrs.myAttr;
     }
 }
 
@@ -90,7 +90,7 @@ class MyComponent {
     constructor(vnode) {
         this.myEventHandle = this.myEventHandle.bind(this);
     }
-    
+
     myEventHandle() {
         // Do something
     }
@@ -104,10 +104,10 @@ export default MyComponent;
 ```javascript
 require.ensure([], (require) => {
     const MyComponent = require('./MyComponent').default;
-    
+
     require.ensure([], (require) => {
         const MyAnotherComponent = require('./MyAnotherComponent').default;
-        
+
         // Do something
     });
 });
@@ -125,7 +125,7 @@ const MyComponent = require(path.resolve('./src/components/fragment/MyComponent'
 ```
 * **Keys** for array: https://mithril.js.org/keys.html
 * **Vanilla CSS**
-  * **Avoid using the space operator** - The vast majority of CSS maintainability issues are due to CSS specificity issues. The space operator defines a descendant (e.g. .a .b) and at the same time, it increases the level of specificity for the CSS rules that apply to that selector, sometimes overriding styles unexpectedly. 
+  * **Avoid using the space operator** - The vast majority of CSS maintainability issues are due to CSS specificity issues. The space operator defines a descendant (e.g. .a .b) and at the same time, it increases the level of specificity for the CSS rules that apply to that selector, sometimes overriding styles unexpectedly.
   Instead, it's preferable to share a namespace prefix in all class names that belong to a logical group of elements:
 	```css
 	/* AVOID */
@@ -166,7 +166,7 @@ const MyComponent = require(path.resolve('./src/components/fragment/MyComponent'
 	.modal-twitter {}
 	.modal-facebook {}
 	```
-    
+
 ##### **Javascript Style Guide** #####
 * https://github.com/airbnb/javascript
 * https://github.com/Khan/style-guides/blob/master/style/javascript.md

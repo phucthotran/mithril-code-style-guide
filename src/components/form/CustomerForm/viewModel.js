@@ -9,10 +9,10 @@ let viewModel = {
   getInfo() {
     return `Name: ${viewModel.name}, age: ${viewModel.age}`;
   },
-  loadList() { debugger;
+  loadList() {
     viewModel.list = CustomerService.list();
   },
-  onSave() { debugger;
+  onSave() {
     CustomerService.save({
       name: viewModel.name,
       age: viewModel.age
